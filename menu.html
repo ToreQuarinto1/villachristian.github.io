@@ -38,7 +38,7 @@
   <!-- SCRIPT PER CARICARE IL MENU DINAMICO -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      fetch('/api/menu')
+      fetch('menu.json')
         .then(response => response.json())
         .then(menuData => {
           const menuContainer = document.getElementById("menu-container");
