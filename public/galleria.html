@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galleria - Villa Christian</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link" href="menu.html">Menu/Bar</a>
+    <a class="nav-link" href="contatti.html">Contatti</a>
+    <a class="nav-link" href="galleria.html">Galleria</a>
+  </nav>
+
+  <!-- GALLERIA -->
+  <section class="galleria-section py-5">
+  <div class="container">
+    <h2 class="text-center text-uppercase mb-5 titolo-sezione">Galleria</h2>
+
+    <!-- Galleria Giorno -->
+    <h3 class="text-center sottotitolo-sezione">Giornata in Piscina</h3>
+    <div id="carouselGiorno" class="carousel slide mb-5" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/bellavistapiscina.jpeg" class="d-block w-100 rounded" alt="Piscina Giorno">
+        </div>
+        <div class="carousel-item">
+          <img src="img/latobar.jpeg" class="d-block w-100 rounded" alt="Bar Giorno">
+        </div>
+        <div class="carousel-item">
+          <img src="img/latobar2.jpeg" class="d-block w-100 rounded" alt="Snack Giorno">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselGiorno" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselGiorno" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <!-- Galleria Notte -->
+    <h3 class="text-center sottotitolo-sezione">Atmosfera Giorno/Sera</h3>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <video class="w-100 rounded shadow" autoplay muted loop playsinline>
+          <source src="videos/videorelaxpiscina.mp4" type="video/mp4" />
+          Il tuo browser non supporta il video HTML5.
+        </video>
+      </div>
+      <div class="col-md-6">
+        <img src="img/piscinasera.jpeg" class="img-fluid rounded shadow" alt="Piscina Notte">
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white text-center py-4 mt-5">
+    <div class="container">
+      <p>&copy; 2025 Villa Christian. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

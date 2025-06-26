@@ -1,0 +1,44 @@
+[
+  {
+    "categoria": "Bevande",
+    "articoli": [
+      { "nome": "Tuborg 33cl" },
+      { "nome": "Nastro Azzurro 33cl" },
+      { "nome": "Heineken 33cl" },
+      { "nome": "Acqua naturale/frizzante 0,5cl" },
+      { "nome": "Acqua 2l" },
+      { "nome": "Coca cola 33cl" },
+      { "nome": "Coca cola zero 33cl" },
+      { "nome": "Fanta 33cl" },
+      { "nome": "Redbull 33cl" },
+      { "nome": "San Benedetto limone 33cl" },
+      { "nome": "San Benedetto pesca 33cl" },
+      { "nome": "Estathe Limone 33cl" },
+      { "nome": "Estathe Pesca 33cl" },
+      { "nome": "Cocktail Alcolico/Analcolico" }
+    ]
+  },
+  {
+    "categoria": "Buffet",
+    "articoli": [
+      { "nome": "FOCACCIA 24-30 pezzi" },
+      { "nome": "MARGHERITA" },
+      { "nome": "DIAVOLA" },
+      { "nome": "CAPRICCIOSA" },
+      { "nome": "4 FORMAGGI" },
+      { "nome": "BARESE" },
+      { "nome": "ROSSA" },
+      { "nome": "RIPIENA" },
+      { "nome": "MORTAZZA (fiordilatte, mortadella, crema di pistacchio, granella di pistacchio)" },
+      { "nome": "MARTINESE (fiordilatte, capocollo di Martina Franca, stracciatella, granella di pistacchio)" },
+      { "nome": "NONNA (pomodoro, fiordilatte, melanzane fritte, prosciutto cotto, grana)" },
+      { "nome": "NONNA 2.0 (pomodoro, fiordilatte, olive denocciolate, salame piccante, grana)" },
+      { "nome": "QUEEN (pomodoro giallo del piennolo, fiordilatte, ventricina piccante, rucola, fonduta di pecorino)" },
+      { "nome": "SAPORI DEL SUD (pomodoro, fiordilatte, pancetta coppata, taralli sbriciolati, peperone crusco sbriciolato)" },
+      { "nome": "GOURMET (base neutra, rucola, prosciutto crudo, stracciatella, scaglie di mandorla, paté di olive nere)" },
+      { "nome": "PANZEROTTINI (classico, diavola, mortadella)" },
+      { "nome": "PUCCETTINA o PIADINA (cotto e scamorza, salame dolce e scamorza, caprese)" },
+      { "nome": "GOLOSINI WÜRSTEL" }
+    ]
+  }
+]
