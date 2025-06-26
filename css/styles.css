@@ -215,84 +215,52 @@ ul li {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .hero-container {
-    height: 60vh;
-  }
+/* ...Tutto il tuo CSS invariato sopra... */
 
+/* Aggiunta per migliorare la navbar su dispositivi mobili */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+/* Miglioramenti aggiuntivi per schermi piccoli */
+@media (max-width: 480px) {
   .titolo-principale {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
   }
 
   .hero-subtext {
-    flex-direction: column;
-    text-align: center;
-    padding: 0 1rem;
-    font-size: 1rem;
-  }
-
-  .left-sub, .right-sub {
-    width: 100%;
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
   }
 
   .highlighted-text {
-    font-size: 1rem;
-  }
-
-  .highlighted-text.small {
     font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
   }
 
-  .menu-bg {
+  .main-content {
     padding: 1rem;
   }
-  .galleria {
-  background-color: #f0f8ff;
-  padding: 2rem;
-  border-radius: 10px;
-}
 
-.galleria h1 {
-  font-family: 'Engravers MT', Georgia, serif;
-  color: #006994;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
+  footer {
+    font-size: 0.8rem;
+  }
 
-.galleria img,
-.galleria video {
-  transition: transform 0.3s ease;
-}
+  .navbar .nav-link {
+    font-size: 0.95rem;
+  }
 
-.galleria img:hover,
-.galleria video:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-.titolo-sezione {
-  font-family: 'Engravers MT', Georgia, serif;
-  color: #006994;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  font-size: 2rem;
-}
+  .menu-bg ul li {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
 
-.sottotitolo-sezione {
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-  margin: 2rem 0 1rem;
-  font-size: 1.5rem;
-}
-
-.carousel-inner img {
-  height: 500px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  padding: 1rem;
-}
-
+  .carousel-inner img {
+    height: 280px;
+  }
 }
