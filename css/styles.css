@@ -5,6 +5,7 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 /* Navbar */
@@ -12,15 +13,17 @@ body {
   background-color: #006994;
   display: flex;
   justify-content: center;
-  padding: 1rem;
-  gap: 2rem;
+  align-items: center;
   flex-wrap: wrap;
+  padding: 1rem;
+  gap: 1.5rem;
 }
 
 .navbar .nav-link {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1rem;
 }
 
 .navbar .nav-link:hover {
@@ -34,6 +37,7 @@ footer {
   text-align: center;
   padding: 1rem 0;
   margin-top: 2rem;
+  font-size: 0.9rem;
 }
 
 /* Hero section */
@@ -90,35 +94,38 @@ footer {
     0 0 2px #f5c542,
     0 0 4px #f5c542,
     2px 2px 5px rgba(0, 0, 0, 0.6);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .hero-subtext {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 0 3rem;
+  max-width: 900px;
+  padding: 0 2rem;
   font-size: 1.2rem;
   font-weight: 500;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  flex-wrap: wrap;
 }
 
 .left-sub, .right-sub {
   width: 45%;
+  min-width: 280px;
 }
 
 /* Testo evidenziato */
 .highlighted-text {
   font-family: 'Georgia', serif;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: white;
   text-shadow:
     0 0 2px #f5c542,
     0 0 4px #f5c542,
     2px 2px 5px rgba(0, 0, 0, 0.7);
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+  background: rgba(0, 0, 0, 0.5);
   padding: 0.8rem 1.2rem;
   margin: 0.6rem 0;
   border-radius: 8px;
@@ -137,7 +144,7 @@ footer {
 .main-content {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 1rem;
 }
 
 .pagina {

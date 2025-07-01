@@ -8,13 +8,16 @@
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar">
+ <nav class="navbar">
+  <div class="nav-toggle" onclick="toggleMenu()">☰</div>
+  <div class="nav-links" id="navLinks">
     <a class="nav-link" href="index.html">Home</a>
     <a class="nav-link" href="menu.html">Menu/Bar</a>
     <a class="nav-link" href="contatti.html">Contatti</a>
     <a class="nav-link" href="galleria.html">Galleria</a>
-  </nav>
+  </div>
+</nav>
+
 
   <!-- Hero con video -->
   <header class="hero-container">
@@ -64,6 +67,11 @@
   <footer>
     <p>&copy; 2025 Villa Christian. Tutti i diritti riservati.</p>
   </footer>
+<script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('show');
+  }
+</script>
 
 </body>
 </html>
