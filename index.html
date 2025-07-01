@@ -3,70 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Villa Christian - Home</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <title>Villa Christian – Home</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- CSS personalizzato -->
+  <link rel="stylesheet" href="css/custom.css">
 </head>
-<body>
+<body class="text-gray-800 bg-[var(--light)] scroll-smooth">
 
- <nav class="navbar">
-  <div class="nav-toggle" onclick="toggleMenu()">☰</div>
-  <div class="nav-links" id="navLinks">
-    <a class="nav-link" href="index.html">Home</a>
-    <a class="nav-link" href="menu.html">Menu/Bar</a>
-    <a class="nav-link" href="contatti.html">Contatti</a>
-    <a class="nav-link" href="galleria.html">Galleria</a>
-  </div>
-</nav>
- <!-- Hero con video -->
-<header class="hero-container">
-  
-  <video class="hero-video" autoplay muted loop playsinline preload="auto">
-    <source src="videos/videohome.mp4" type="video/mp4" />
-    Il tuo browser non supporta il tag video.
-  </video>
-  <div class="hero-text">
-    <h1 class="titolo-principale">BENVENUTI A VILLA CHRISTIAN</h1>
-    <div class="hero-subtext">
-      <div class="left-sub">
-        <p class="highlighted-text">PRENOTA ORA IL TUO INGRESSO</p>
-        <p class="highlighted-text">ORARIO APERTURA DELLA PISCINA: <br />
-          DALLE 11:00 ALLE 18:00!</p>
-      </div>
-      <div class="right-sub">
-        <p class="highlighted-text">ORGANIZZA LA TUA GIORNATA DI RELAX</p>
-        <p class="highlighted-text small">
-          Prenota la tua zona privata in compagnia di amici o famiglia<br />
-          Orario disponibile: <br />
-          Primo turno ore 11.00/18.00!<br />
-          Secondo turno ore 18:00/00.00!
-        </p>
-      </div>
+  <!-- Navbar ------------------------------------------------>
+  <nav class="fixed inset-x-0 top-0 z-50 bg-white/70 backdrop-blur-lg">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <a href="#home" class="text-xl font-medium tracking-wide">Villa Christian</a>
+
+      <button id="menuBtn" class="lg:hidden p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <ul id="navLinks" class="hidden lg:flex gap-6 font-semibold">
+        <li><a class="hover:text-[var(--primary)]" href="index.html">Home</a></li>
+        <li><a class="hover:text-[var(--primary)]" href="menu.html">Menu/Bar</a></li>
+        <li><a class="hover:text-[var(--primary)]" href="contatti.html">Contatti</a></li>
+        <li><a class="hover:text-[var(--primary)]" href="galleria.html">Galleria</a></li>
+      </ul>
     </div>
-  </div>
-</header>
+  </nav>
 
+  <!-- HERO -------------------------------------------------->
+  <header id="home" class="relative h-screen flex items-center justify-center pt-16">
+    <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto">
+      <source src="videos/videohome.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-black/50"></div>
 
-  <!-- Contenuto principale Home -->
-  <main class="main-content">
-    <section class="pagina">
-      <h2>Scopri la nostra magnifica piscina</h2>
-      <p>🌞 L’estate è arrivata e la tua vacanza perfetta ti aspetta nella nostra Villa Christian , siamo a Taranto🏡💦 <br />
-            Qui puoi tuffarti quando vuoi, rilassarti al sole su comodi lettini 🕶️🌴 e goderti un drink fresco direttamente al bar 🍹😎.<br />
-            È il posto ideale per staccare la spina con gli amici o la famiglia! <br />
-            Prenota subito e vivi momenti indimenticabili tra relax, divertimento e tanto sole ☀️✨<br />
-             #RelaxTotale #EstateInVillaChristian</p>
+    <div class="relative max-w-4xl mx-auto text-center text-white px-4">
+      <h1 class="text-4xl md:text-6xl mb-8 heading-glow">BENVENUTI A VILLA CHRISTIAN</h1>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="hero-card p-6">
+          <p class="text-lg font-semibold uppercase">Prenota ora il tuo ingresso</p>
+          <p class="mt-2">Orario piscina:<br/>11:00 – 18:00</p>
+        </div>
+
+        <div class="hero-card p-6">
+          <p class="text-lg font-semibold uppercase">Organizza la tua giornata di relax</p>
+          <p class="mt-2 text-sm md:text-base">
+            Zona privata per amici o famiglia<br/>
+            Primo turno 11:00 – 18:00<br/>
+            Secondo turno 18:00 – 00:00
+          </p>
+        </div>
+      </div>
+
+      <a href="#contacts" class="btn-ripple inline-block mt-10 bg-[var(--accent)] text-black font-bold px-8 py-3 rounded-full shadow-lg transition transform hover:-translate-y-1">
+        Prenota ora
+      </a>
+    </div>
+  </header>
+
+  <!-- TESTO ------------------------------------------------->
+  <main>
+    <section class="max-w-3xl mx-auto py-16 px-6">
+      <h2 class="text-3xl font-semibold mb-6">Scopri la nostra magnifica piscina</h2>
+      <p class="leading-relaxed space-y-4">
+        🌞 L’estate è arrivata e la tua vacanza perfetta ti aspetta nella nostra Villa Christian, siamo a Taranto🏡💦.<br/>
+        Tuffati quando vuoi, rilassati al sole su comodi lettini 🕶️🌴 e goditi un drink fresco al bar 🍹😎.<br/>
+        Prenota subito e vivi momenti indimenticabili tra relax, divertimento e tanto sole ☀️✨<br/>
+        #RelaxTotale #EstateInVillaChristian
+      </p>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Villa Christian. Tutti i diritti riservati.</p>
+  <!-- FOOTER ----------------------------------------------->
+  <footer class="bg-[var(--primary)] text-white py-4 text-center">
+    &copy; 2025 Villa Christian. Tutti i diritti riservati.
   </footer>
-<script>
-  function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('show');
-  }
-</script>
 
+  <script>
+    document.getElementById('menuBtn').onclick = () =>
+      document.getElementById('navLinks').classList.toggle('hidden');
+  </script>
 </body>
 </html>

@@ -1,36 +1,81 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contatti - Villa Christian</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contatti – Villa Christian</title>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <a class="nav-link" href="index.html">Home</a>
-    <a class="nav-link" href="menu.html">Menu/Bar</a>
-    <a class="nav-link" href="contatti.html">Contatti</a>
-    <a class="nav-link" href="galleria.html">Galleria</a>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="text-gray-800 bg-[var(--light)] scroll-smooth">
+
+  <!-- Navbar (idem) -->
+  <nav class="fixed inset-x-0 top-0 z-50 bg-white/70 backdrop-blur-lg">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <a href="index.html" class="text-xl font-medium tracking-wide">Villa Christian</a>
+      <button id="menuBtn" class="lg:hidden p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <ul id="navLinks" class="hidden lg:flex gap-6 font-semibold">
+        <li><a class="hover:text-[var(--primary)]" href="index.html">Home</a></li>
+        <li><a class="hover:text-[var(--primary)]" href="menu.html">Menu/Bar</a></li>
+        <li><a class="hover:text-[var(--primary)]" href="contatti.html">Contatti</a></li>
+        <li><a class="hover:text-[var(--primary)]" href="galleria.html">Galleria</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <!-- Contenuto principale -->
-  <main class="main-content">
-    <section class="pagina">
-      <h2>Contattaci</h2>
-      <p><strong></strong> Hai bisogno di informazioni, vuoi prenotare o semplicemente scoprire di più sulla nostra villa?</p>
-      <p><strong>📱 Telefono 1 / WhatsApp:</strong> +39 351 9011 228</p>
-      <p><strong>📱 Telefono 2 / WhatsApp::</strong> +39 327 1580 917</p>
-      <p><strong>🎥 Seguici su TikTok:</strong> <a href="https://www.tiktok.com/@villa.christian0" target="_blank">@villa.christian0</a></p>
+  <!-- Contatti -->
+  <main class="min-h-screen flex items-center pt-24 pb-16 px-6">
+    <section class="max-w-3xl mx-auto w-full">
+      <h2 class="text-4xl font-semibold mb-8 text-center">Contattaci</h2>
+      <div class="bg-white rounded-2xl shadow-lg p-8 space-y-6">
+        <p>Hai bisogno di informazioni, vuoi prenotare o scoprire di più sulla nostra villa? Siamo a tua disposizione!</p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <span class="text-2xl">📱</span>
+            <div>
+              <p class="font-semibold">Telefono 1 / WhatsApp</p>
+              <a href="https://wa.me/393519011228" class="text-[var(--primary)] hover:underline">+39 351 9011 228</a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <span class="text-2xl">📱</span>
+            <div>
+              <p class="font-semibold">Telefono 2 / WhatsApp</p>
+              <a href="https://wa.me/393271580917" class="text-[var(--primary)] hover:underline">+39 327 1580 917</a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <span class="text-2xl">🎥</span>
+            <div>
+              <p class="font-semibold">Seguici su TikTok</p>
+              <a href="https://www.tiktok.com/@villa.christian0" target="_blank" class="text-[var(--primary)] hover:underline">@villa.christian0</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://wa.me/393519011228" class="btn-ripple inline-block bg-[var(--accent)] text-black font-bold px-8 py-3 rounded-full shadow-lg transition transform hover:-translate-y-1 hover:shadow-xl">
+          Chatta su WhatsApp
+        </a>
+      </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Villa Christian. Tutti i diritti riservati.</p>
+  <footer class="bg-[var(--primary)] text-white py-4 text-center">
+    &copy; 2025 Villa Christian. Tutti i diritti riservati.
   </footer>
 
+  <script>
+    document.getElementById('menuBtn').onclick = () =>
+      document.getElementById('navLinks').classList.toggle('hidden');
+  </script>
 </body>
 </html>

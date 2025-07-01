@@ -3,70 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu/Bar - Villa Christian</title>
+  <title>Menu/Bar – Villa Christian</title>
 
-  <!-- Bootstrap CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
 </head>
-<body>
+<body class="text-gray-800 bg-[var(--light)] scroll-smooth">
 
- <!-- Navbar -->
-  <nav class="navbar">
-    <a class="nav-link" href="index.html">Home</a>
-    <a class="nav-link" href="menu.html">Menu/Bar</a>
-    <a class="nav-link" href="contatti.html">Contatti</a>
-    <a class="nav-link" href="galleria.html">Galleria</a>
+  <!-- Navbar (uguale a index) -->
+  <nav class="fixed inset-x-0 top-0 z-50 bg-white/70 backdrop-blur-lg">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <a href="index.html" class="text-xl font-medium tracking-wide">Villa Christian</a>
+      <button id="menuBtn" class="lg:hidden p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <ul id="navLinks" class="hidden lg:flex gap-6 font-semibold">
+        <li><a class="hover:text-[var(--primary)]" href="index.html">Home</a></li>
+        <li><a class="hover:text-[var(--primary)]" href="menu.html">Menu/Bar</a></li>
+        <li><a class="hover:text-[var(--primary)]" href="contatti.html">Contatti</a></li>
+        <li><a class="hover:text-[var(--primary)]" href="galleria.html">Galleria</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <!-- SEZIONE MENU -->
-  <section class="container my-5 menu-bg">
-    <h1 class="mb-4 text-center">Il nostro Menu/Bar</h1>
-    <div id="menu-container" class="row"></div>
+  <!-- Menu dinamico -->
+  <section class="max-w-5xl mx-auto pt-24 pb-16 px-6">
+    <h1 class="text-4xl font-semibold text-center mb-10">Il nostro Menu/Bar</h1>
+    <div id="menu-container" class="grid gap-12"></div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-primary text-white text-center py-4">
-    <div class="container">
-      <p>&copy; 2025 Villa Christian. Tutti i diritti riservati.</p>
-    </div>
+  <footer class="bg-[var(--primary)] text-white py-4 text-center">
+    &copy; 2025 Villa Christian. Tutti i diritti riservati.
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- SCRIPT PER CARICARE IL MENU DINAMICO -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      fetch('menu.json')
-        .then(response => response.json())
-        .then(menuData => {
-          const menuContainer = document.getElementById("menu-container");
+    /* hamburger */
+    document.getElementById('menuBtn').onclick = () =>
+      document.getElementById('navLinks').classList.toggle('hidden');
 
-          menuData.forEach(categoria => {
-            const categoriaDiv = document.createElement("div");
-            categoriaDiv.className = "col-12 mb-4";
+    /* carica menu.json */
+    fetch('menu.json')
+      .then(r => r.json())
+      .then(data => {
+        const box = document.getElementById('menu-container');
+        data.forEach(cat => {
+          const div = document.createElement('div');
+          div.className = 'bg-white rounded-2xl shadow-lg p-8';
 
-            const titolo = document.createElement("h3");
-            titolo.textContent = categoria.categoria;
-            categoriaDiv.appendChild(titolo);
+          const h3 = document.createElement('h3');
+          h3.className = 'text-2xl font-semibold mb-4';
+          h3.textContent = cat.categoria;
+          div.appendChild(h3);
 
-            const lista = document.createElement("ul");
-            categoria.articoli.forEach(articolo => {
-              const li = document.createElement("li");
-              li.textContent = articolo.nome;
-              lista.appendChild(li);
-            });
-            categoriaDiv.appendChild(lista);
-
-            menuContainer.appendChild(categoriaDiv);
+          const ul = document.createElement('ul');
+          ul.className = 'space-y-2 list-disc list-inside';
+          cat.articoli.forEach(a => {
+            const li = document.createElement('li');
+            li.textContent = a.nome;
+            ul.appendChild(li);
           });
-        })
-        .catch(error => {
-          console.error("Errore durante il caricamento del menu:", error);
+          div.appendChild(ul);
+          box.appendChild(div);
         });
-    });
+      })
+      .catch(() =>
+        document.getElementById('menu-container').innerHTML =
+          '<p class=\"text-red-600\">Impossibile caricare il menu.</p>');
   </script>
-
 </body>
 </html>
